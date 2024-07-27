@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply from-reactx-100 to-reactx-200 via-reactx-300 grid min-h-screen place-content-center place-items-center bg-gradient-to-t text-neutral-100;
+  }
+}

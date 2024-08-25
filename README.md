@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./public/reactx.svg" />
-  <p>Modern and fast starter template for react frontend projects</p>
+  <p>Modern and fast template for react projects</p>
 </div>
 
 ## Features

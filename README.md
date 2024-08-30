@@ -22,3 +22,10 @@ pnpm dlx degit emrocode/reactx#main ./my-app
 ```bash
 cd ./my-app && pnpm install && pnpm run dev --open
 ```
+
+> [!TIP]
+> Replace the current package name (reactx) with your desired name:
+>
+>```bash
+>sed -i "s/\"name\": \"reactx\"/\"name\": \"my-app\"/" package.json
+>```

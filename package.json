@@ -11,15 +11,15 @@
     "prettier": "prettier --write src/**/*"
   },
   "dependencies": {
-    "@rsbuild/plugin-react": "1.0.1-beta.15",
+    "@rsbuild/plugin-react": "1.0.1",
     "clsx": "^2.1.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
-    "@rsbuild/core": "1.0.1-beta.15",
+    "@rsbuild/core": "1.0.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",

@@ -1,6 +1,10 @@
 <div align="center">
-  <img src="./public/reactx.svg" />
-  <p>Modern and fast template for react projects</p>
+
+![Reactx](./public/reactx_dark.svg#gh-dark-mode-only)
+![Reactx](./public/reactx_light.svg#gh-light-mode-only)
+\
+_Modern and fast template for react projects_
+
 </div>
 
 ## Features
@@ -26,6 +30,6 @@ cd ./my-app && pnpm install && pnpm run dev --open
 > [!TIP]
 > Replace the current package name (reactx) with your desired name:
 >
->```bash
->sed -i "s/\"name\": \"reactx\"/\"name\": \"my-app\"/" package.json
->```
+> ```bash
+> sed -i "s/\"name\": \"reactx\"/\"name\": \"my-app\"/" package.json
+> ```

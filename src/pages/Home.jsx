@@ -4,7 +4,7 @@ export default function Home() {
       <img
         width={240}
         height={240}
-        src="/reactx.svg"
+        src="/reactx_dark.svg"
         alt=""
         className="-skew-y-6 select-none"
       />

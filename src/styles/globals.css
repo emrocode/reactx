@@ -5,6 +5,6 @@
 @layer base {
   html,
   body {
-    @apply grid min-h-screen place-content-center bg-gradient-to-t from-reactx-100 via-reactx-300 to-reactx-200;
+    @apply grid min-h-screen place-content-center bg-gradient-to-t from-[#16181d] via-[#343a46] to-[#23272f];
   }
 }

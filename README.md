@@ -25,7 +25,7 @@ pnpm dlx degit emrocode/reactx#main ./my-app
 ```
 
 ```bash
-cd ./my-app && pnpm install && pnpm run dev:example --open
+cd ./my-app && pnpm install && pnpm run dev --open
 ```
 
 > [!TIP]

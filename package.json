@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "rsbuild dev --port 3000",
-    "dev:example": "rsbuild dev --port 3000 --env-mode example",
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",

@@ -15,13 +15,4 @@ export default defineConfig({
       index: "./src/app.jsx",
     },
   },
-  server: {
-    proxy: {
-      "/api": {
-        target: import.meta.env.API_ENDPOINT,
-        changeOrigin: true,
-        pathRewrite: { "^/api": "" },
-      },
-    },
-  },
 });

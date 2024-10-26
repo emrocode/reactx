@@ -7,7 +7,6 @@ export default defineConfig({
     template: "./index.html",
   },
   source: {
-    aliasStrategy: "prefer-alias",
     alias: {
       "@": "./src/",
     },

@@ -1,33 +1,25 @@
-import reactPlugin from "eslint-plugin-react";
-import reactRefreshPlugin from "eslint-plugin-react-refresh";
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginReact from "eslint-plugin-react";
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["**/*.js", "**/*.jsx"],
+    files: ["**/*.{js,jsx}"],
     languageOptions: {
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-          impliedStrict: true,
-        },
+        sourceType: "module",
+        ecmaVersion: "latest",
+        ecmaFeatures: { jsx: true, impliedStrict: true },
       },
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-    plugins: {
-      react: reactPlugin,
-      "react-refresh": reactRefreshPlugin,
-    },
-    rules: {
-      ...reactPlugin.configs.recommended.rules,
-      "react/jsx-no-target-blank": "off",
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
+      globals: globals.browser,
     },
     settings: {
-      react: { version: "18.3.1" },
+      react: {
+        version: "detect",
+      },
     },
   },
+  pluginJs.configs.recommended,
+  pluginReact.configs.flat.recommended,
 ];

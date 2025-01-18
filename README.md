@@ -12,7 +12,7 @@ template for react projects_
 
 - Rsbuild
 - React
-- React Router v6
+- React Router
 - Tailwindcss
 - ESLint and Prettier
 

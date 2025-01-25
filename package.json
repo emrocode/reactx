@@ -8,7 +8,7 @@
     "build": "rsbuild build",
     "preview": "rsbuild preview",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write src/**/*"
+    "format": "prettier --write src/*"
   },
   "dependencies": {
     "clsx": "^2.1.1",

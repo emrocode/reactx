@@ -2,13 +2,20 @@ import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
 
 export default defineConfig({
-  plugins: [pluginReact()],
+  environments: {
+    web: {
+      source: {
+        entry: {
+          index: "./src/app.jsx",
+        },
+      },
+      output: {
+        target: "web",
+      },
+      plugins: [pluginReact()],
+    },
+  },
   html: {
     template: "./index.html",
-  },
-  source: {
-    entry: {
-      index: "./src/app.jsx",
-    },
   },
 });

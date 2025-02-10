@@ -28,11 +28,11 @@ importers:
         specifier: ^9.19.0
         version: 9.19.0
       '@rsbuild/core':
-        specifier: 1.2.3
-        version: 1.2.3
+        specifier: 1.2.5
+        version: 1.2.5
       '@rsbuild/plugin-react':
         specifier: 1.1.0
-        version: 1.1.0(@rsbuild/core@1.2.3)
+        version: 1.1.0(@rsbuild/core@1.2.5)
       '@tailwindcss/postcss':
         specifier: ^4.0.3
         version: 4.0.3
@@ -142,8 +142,8 @@ packages:
   '@module-federation/webpack-bundler-runtime@0.8.4':
     resolution: {integrity: sha512-HggROJhvHPUX7uqBD/XlajGygMNM1DG0+4OAkk8MBQe4a18QzrRNzZt6XQbRTSG4OaEoyRWhQHvYD3Yps405tQ==}
 
-  '@rsbuild/core@1.2.3':
-    resolution: {integrity: sha512-lUCt8gQe9E2PI3srcEJ1Na3GQYmsYuvAqK0f/k00HM0pEjrbOFC9Xq2kR85UoXHFqlTCIw/fLLDe91PKRCbKAw==}
+  '@rsbuild/core@1.2.5':
+    resolution: {integrity: sha512-k9JFE613b0X0WUaqfp6CIh2sS+jpzx30cCqe8wPIaQ/tVfUc1kr7gfR3dwcdiE68+WVnFHGm1JqMdeOZogjsJQ==}
     engines: {node: '>=16.7.0'}
     hasBin: true
 
@@ -401,8 +401,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001696:
-    resolution: {integrity: sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==}
+  caniuse-lite@1.0.30001699:
+    resolution: {integrity: sha512-b+uH5BakXZ9Do9iK+CkDmctUSEqZl+SP056vc5usa0PL+ev5OHw003rZXcnjNDv3L8P5j6rwT6C0BPKSikW08w==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1348,7 +1348,7 @@ snapshots:
       '@module-federation/runtime': 0.8.4
       '@module-federation/sdk': 0.8.4
 
-  '@rsbuild/core@1.2.3':
+  '@rsbuild/core@1.2.5':
     dependencies:
       '@rspack/core': 1.2.2(@swc/helpers@0.5.15)
       '@rspack/lite-tapable': 1.0.1
@@ -1357,9 +1357,9 @@ snapshots:
     transitivePeerDependencies:
       - '@rspack/tracing'
 
-  '@rsbuild/plugin-react@1.1.0(@rsbuild/core@1.2.3)':
+  '@rsbuild/plugin-react@1.1.0(@rsbuild/core@1.2.5)':
     dependencies:
-      '@rsbuild/core': 1.2.3
+      '@rsbuild/core': 1.2.5
       '@rspack/plugin-react-refresh': 1.0.1(react-refresh@0.16.0)
       react-refresh: 0.16.0
 
@@ -1407,7 +1407,7 @@ snapshots:
       '@module-federation/runtime-tools': 0.8.4
       '@rspack/binding': 1.2.2
       '@rspack/lite-tapable': 1.0.1
-      caniuse-lite: 1.0.30001696
+      caniuse-lite: 1.0.30001699
     optionalDependencies:
       '@swc/helpers': 0.5.15
 
@@ -1608,7 +1608,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001696: {}
+  caniuse-lite@1.0.30001699: {}
 
   chalk@4.1.2:
     dependencies:

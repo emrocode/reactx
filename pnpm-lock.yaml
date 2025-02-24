@@ -31,8 +31,8 @@ importers:
         specifier: 1.2.8
         version: 1.2.8
       '@rsbuild/plugin-react':
-        specifier: 1.1.0
-        version: 1.1.0(@rsbuild/core@1.2.8)
+        specifier: 1.1.1
+        version: 1.1.1(@rsbuild/core@1.2.8)
       '@tailwindcss/postcss':
         specifier: ^4.0.6
         version: 4.0.6
@@ -151,8 +151,8 @@ packages:
     engines: {node: '>=16.7.0'}
     hasBin: true
 
-  '@rsbuild/plugin-react@1.1.0':
-    resolution: {integrity: sha512-uqdRoV2V91G1XIA14dAmxqYTlTDVf0ktpE7TgwG29oQ2j+DerF1kh29WPHK9HvGE34JTfaBrsme2Zmb6bGD0cw==}
+  '@rsbuild/plugin-react@1.1.1':
+    resolution: {integrity: sha512-gkATKrOQauXMMtrYA5jbTQkhmYTE0VXoknPLtVpiXtwDbBUwgX23LFf1XJ51YOwqYpP7g5SfPEMgD2FENtCq0A==}
     peerDependencies:
       '@rsbuild/core': 1.x
 
@@ -1366,7 +1366,7 @@ snapshots:
     transitivePeerDependencies:
       - '@rspack/tracing'
 
-  '@rsbuild/plugin-react@1.1.0(@rsbuild/core@1.2.8)':
+  '@rsbuild/plugin-react@1.1.1(@rsbuild/core@1.2.8)':
     dependencies:
       '@rsbuild/core': 1.2.8
       '@rspack/plugin-react-refresh': 1.0.1(react-refresh@0.16.0)

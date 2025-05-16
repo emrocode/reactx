@@ -19,6 +19,17 @@ export default [
         version: "detect",
       },
     },
+    rules: {
+      "react/jsx-sort-props": [
+        "error",
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          ignoreCase: true,
+          reservedFirst: true,
+        },
+      ],
+    },
   },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,

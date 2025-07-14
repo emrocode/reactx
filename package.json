@@ -12,6 +12,7 @@
     "format": "prettier ./src/ --write"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "prop-types": "^15.8.1",

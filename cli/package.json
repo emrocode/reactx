@@ -4,10 +4,6 @@
   "description": "Reactx CLI for scaffolding and managing Reactx projects",
   "type": "module",
   "main": "./cli.mjs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/emrocode/reactx.git"
-  },
   "bin": {
     "reactx": "./cli.mjs"
   },
@@ -18,14 +14,14 @@
   "scripts": {
     "start": "node ./cli.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emrocode/reactx"
+  },
+  "author": "Emilio Romero <emrocode@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "inquirer": "^12.7.0",
     "zx": "^8.7.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

@@ -21,16 +21,9 @@ template for react projects_
 Use pnpm or any other package manager:
 
 ```bash
-pnpm dlx degit emrocode/reactx#main ./my-app
+pnpm dlx setup-reactx@latest --dir my-app
 ```
 
 ```bash
-cd ./my-app && pnpm install && pnpm run dev --open
+cd ./my-app && pnpm run dev --open
 ```
-
-> [!TIP]
-> Replace the current package name (reactx) with your desired name:
->
-> ```bash
-> sed -i "s/\"name\": \"reactx\"/\"name\": \"my-app\"/" package.json
-> ```

@@ -4,4 +4,4 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    pull-request-limit: 0
+    open-pull-request-limit: 0

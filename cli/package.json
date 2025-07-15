@@ -1,6 +1,6 @@
 {
   "name": "setup-reactx",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Reactx CLI for scaffolding and managing Reactx projects",
   "type": "module",
   "main": "./cli.mjs",
@@ -18,10 +18,8 @@
     "type": "git",
     "url": "git+https://github.com/emrocode/reactx"
   },
-  "author": "Emilio Romero <emrocode@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "inquirer": "^12.7.0",
-    "zx": "^8.7.0"
+    "zx": "^8.7.1"
   }
 }

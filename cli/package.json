@@ -1,6 +1,6 @@
 {
   "name": "setup-reactx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Reactx CLI for scaffolding and managing Reactx projects",
   "type": "module",
   "main": "./cli.mjs",

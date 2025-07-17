@@ -4,6 +4,7 @@ import "zx/globals";
 import fs from "fs";
 import path from "path";
 import inquirer from "inquirer";
+import { execa } from "execa";
 import { hasCmd } from "./helpers.mjs";
 
 // ### Package manager detection and selection ###
@@ -62,16 +63,24 @@ console.log(chalk.blue(`🚀 Cloning Reactx template into "${projectName}"...`))
 
 switch (selectedPM.length > 0) {
   case selectedPM === "npm":
-    await $`npm exec degit emrocode/reactx#main ./${projectName}`;
+    await execa({
+      shell: true,
+    })`npm exec degit emrocode/reactx#main ./${projectName}`;
     break;
   case selectedPM === "pnpm":
-    await $`pnpm dlx degit emrocode/reactx#main ./${projectName}`;
+    await execa({
+      shell: true,
+    })`pnpm dlx degit emrocode/reactx#main ./${projectName}`;
     break;
   case selectedPM === "yarn":
-    await $`yarn dlx degit emrocode/reactx#main ./${projectName}`;
+    await execa({
+      shell: true,
+    })`yarn dlx degit emrocode/reactx#main ./${projectName}`;
     break;
   case selectedPM === "bun":
-    await $`bun x degit emrocode/reactx#main ./${projectName}`;
+    await execa({
+      shell: true,
+    })`bun x degit emrocode/reactx#main ./${projectName}`;
     break;
 }
 
@@ -111,16 +120,16 @@ fs.writeFileSync(pkgPath, JSON.stringify(newPkg, null, 2));
 await spinner("Installing dependencies...", async () => {
   switch (selectedPM.length > 0) {
     case selectedPM === "npm":
-      await $`cd ${projectName} && npm install`;
+      await execa({ shell: true })`cd ${projectName} && npm install`;
       break;
     case selectedPM === "pnpm":
-      await $`cd ${projectName} && pnpm install`;
+      await execa({ shell: true })`cd ${projectName} && pnpm install`;
       break;
     case selectedPM === "yarn":
-      await $`cd ${projectName} && yarn install`;
+      await execa({ shell: true })`cd ${projectName} && yarn install`;
       break;
     case selectedPM === "bun":
-      await $`cd ${projectName} && bun install`;
+      await execa({ shell: true })`cd ${projectName} && bun install`;
       break;
   }
 });

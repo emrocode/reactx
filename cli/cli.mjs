@@ -4,8 +4,7 @@ import "zx/globals";
 import fs from "fs";
 import path from "path";
 import inquirer from "inquirer";
-import { execa } from "execa";
-import { hasCmd } from "./helpers.mjs";
+import { hasCmd, runCommands } from "./helpers.mjs";
 
 // ### Package manager detection and selection ###
 const pmChecks = [
@@ -51,42 +50,19 @@ console.log(chalk.yellow(`Using "${selectedPM}" as package manager.`));
 
 // ### Project setup and cloning ###
 const argv = minimist(process.argv.slice(2), {});
-const projectName = argv.dir || (await question("Project name? ")) || "reactx";
-const targetPath = path.resolve(process.cwd(), projectName);
+const dir = argv.dir || (await question("Project name? ")) || "reactx";
+const targetPath = path.resolve(process.cwd(), dir);
 
 if (fs.existsSync(targetPath)) {
-  console.error(chalk.red(`Directory "${projectName}" already exists!`));
+  console.error(chalk.red(`Directory "${dir}" already exists!`));
   process.exit(1);
 }
 
-console.log(chalk.blue(`🚀 Cloning Reactx template into "${projectName}"...`));
-
-switch (selectedPM.length > 0) {
-  case selectedPM === "npm":
-    await execa({
-      shell: true,
-    })`npm exec degit emrocode/reactx#main ./${projectName}`;
-    break;
-  case selectedPM === "pnpm":
-    await execa({
-      shell: true,
-    })`pnpm dlx degit emrocode/reactx#main ./${projectName}`;
-    break;
-  case selectedPM === "yarn":
-    await execa({
-      shell: true,
-    })`yarn dlx degit emrocode/reactx#main ./${projectName}`;
-    break;
-  case selectedPM === "bun":
-    await execa({
-      shell: true,
-    })`bun x degit emrocode/reactx#main ./${projectName}`;
-    break;
-}
+await runCommands({ pm: selectedPM, mode: { i: false }, dir });
 
 // ### Dependency selection and package.json modification ###
 const REQUIRED_DEPS = ["react", "react-dom", "react-router", "prop-types"];
-const pkgPath = path.join(process.cwd(), `${projectName}/package.json`);
+const pkgPath = path.join(process.cwd(), `${dir}/package.json`);
 const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 let allDeps = Object.keys(pkg.dependencies);
 
@@ -105,7 +81,7 @@ const { selectedPackages } = await inquirer.prompt([
 const newPkg = { ...pkg };
 
 // Rename package.json
-newPkg.name = projectName;
+newPkg.name = dir;
 // Filter out unselected dependencies
 newPkg.dependencies = Object.fromEntries(
   Object.entries(pkg.dependencies).filter(
@@ -117,22 +93,7 @@ newPkg.dependencies = Object.fromEntries(
 fs.writeFileSync(pkgPath, JSON.stringify(newPkg, null, 2));
 
 // ### Install dependencies ###
-await spinner("Installing dependencies...", async () => {
-  switch (selectedPM.length > 0) {
-    case selectedPM === "npm":
-      await execa({ shell: true })`cd ${projectName} && npm install`;
-      break;
-    case selectedPM === "pnpm":
-      await execa({ shell: true })`cd ${projectName} && pnpm install`;
-      break;
-    case selectedPM === "yarn":
-      await execa({ shell: true })`cd ${projectName} && yarn install`;
-      break;
-    case selectedPM === "bun":
-      await execa({ shell: true })`cd ${projectName} && bun install`;
-      break;
-  }
-});
+await runCommands({ pm: selectedPM, mode: { i: true }, dir });
 
 // ### Cleanup ###
 // Remove unneeded files
@@ -152,7 +113,7 @@ if (selectedPM !== "pnpm") {
   }
 }
 
-// Remove unneded directories
+// Remove unneeded directories
 const unneededDirs = [".github", "cli"];
 let removedDirs = [];
 

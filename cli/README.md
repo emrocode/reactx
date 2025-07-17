@@ -1,7 +1,6 @@
 <div align="center">
 
-![Reactx](https://raw.githubusercontent.com/emrocode/reactx/main/public/reactx_dark.svg#gh-dark-mode-only)
-![Reactx](https://raw.githubusercontent.com/emrocode/reactx/main/public/reactx_light.svg#gh-light-mode-only)
+![Reactx](https://raw.githubusercontent.com/emrocode/reactx/main/public/reactx_light.svg)
 \
 _Modern and fast\
 template for react projects_

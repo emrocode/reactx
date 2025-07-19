@@ -23,12 +23,13 @@ export async function runCommands({ pm, mode, dir }) {
   const title = mode.i
     ? "Installing dependencies"
     : `🚀 Cloning @reactx template into "${dir}"`;
+  const templatePath = "emrocode/reactx/templates/js";
 
   const commands = {
-    npm: ["exec", "degit", "emrocode/reactx#main", `./${dir}`],
-    pnpm: ["dlx", "degit", "emrocode/reactx#main", `./${dir}`],
-    yarn: ["dlx", "degit", "emrocode/reactx#main", `./${dir}`],
-    bun: ["x", "degit", "emrocode/reactx#main", `./${dir}`],
+    npm: ["exec", "degit", templatePath, `./${dir}`],
+    pnpm: ["dlx", "degit", templatePath, `./${dir}`],
+    yarn: ["dlx", "degit", templatePath, `./${dir}`],
+    bun: ["x", "degit", templatePath, `./${dir}`],
   };
 
   const args = commands[pm];

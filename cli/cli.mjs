@@ -113,21 +113,5 @@ if (selectedPM !== "pnpm") {
   }
 }
 
-// Remove unneeded directories
-const unneededDirs = [".github", "cli"];
-let removedDirs = [];
-
-for (const dir of unneededDirs) {
-  const filePath = path.join(targetPath, dir);
-  if (fs.existsSync(filePath)) {
-    fs.rmSync(filePath, { recursive: true, force: true });
-    removedDirs.push(dir);
-  }
-}
-
-if (removedDirs.length) {
-  console.log(`🧹 Removed (${removedDirs.join(", ")}) directories.`);
-}
-
 // ### Completion message ###
 console.log(chalk.green("✅ Installation complete!"));

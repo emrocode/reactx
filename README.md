@@ -1,7 +1,7 @@
 <div align="center">
 
-![Reactx](./public/reactx_dark.svg#gh-dark-mode-only)
-![Reactx](./public/reactx_light.svg#gh-light-mode-only)
+![Reactx](./templates/js/public/reactx_dark.svg#gh-dark-mode-only)
+![Reactx](./templates/js/public/reactx_light.svg#gh-light-mode-only)
 \
 _Modern and fast\
 template for react projects_

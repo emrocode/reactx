@@ -1,6 +1,6 @@
 <div align="center">
 
-![Reactx](https://raw.githubusercontent.com/emrocode/reactx/main/public/reactx_light.svg)
+![Reactx](https://raw.githubusercontent.com/emrocode/reactx/main/templates/js/public/reactx_light.svg)
 \
 _Modern and fast\
 template for react projects_

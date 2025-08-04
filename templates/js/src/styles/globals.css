@@ -3,6 +3,10 @@
 @layer base {
   html,
   body {
-    @apply grid min-h-screen place-content-center bg-gradient-to-t from-[#16181d] via-[#343a46] to-[#23272f];
+    @apply bg-gradient-to-t from-[#16181d] via-[#343a46] to-[#23272f];
+  }
+
+  main#app {
+    @apply grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto] place-items-center gap-8;
   }
 }

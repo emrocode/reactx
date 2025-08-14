@@ -4,6 +4,8 @@ import pluginReact from "eslint-plugin-react";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  pluginJs.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
@@ -20,6 +22,7 @@ export default [
       },
     },
     rules: {
+      "react/react-in-jsx-scope": "off",
       "react/jsx-sort-props": [
         "error",
         {
@@ -31,6 +34,4 @@ export default [
       ],
     },
   },
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
 ];

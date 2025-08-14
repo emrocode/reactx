@@ -6,7 +6,7 @@ import path from "path";
 import inquirer from "inquirer";
 import { hasCmd, runCommands } from "./helpers.mjs";
 
-// ### Package manager detection and selection ###
+// Package manager detection and selection
 const pmChecks = [
   { name: "npm", cmd: "npm" },
   { name: "pnpm", cmd: "pnpm" },
@@ -23,11 +23,7 @@ for (const pm of pmChecks) {
 }
 
 if (foundPMs.length === 0) {
-  console.error(
-    chalk.red(
-      "No supported package manager found. Please install npm, yarn, or pnpm.",
-    ),
-  );
+  console.error(chalk.red("No supported package manager found."));
   process.exit(1);
 }
 
@@ -48,7 +44,7 @@ if (foundPMs.length >= 1) {
 
 console.log(chalk.yellow(`Using "${selectedPM}" as package manager.`));
 
-// ### Project setup and cloning ###
+// Project setup and cloning
 const argv = minimist(process.argv.slice(2), {});
 const dir = argv.dir || (await question("Project name? ")) || "reactx";
 const targetPath = path.resolve(process.cwd(), dir);
@@ -60,7 +56,7 @@ if (fs.existsSync(targetPath)) {
 
 await runCommands({ pm: selectedPM, mode: { i: false }, dir });
 
-// ### Dependency selection and package.json modification ###
+// Dependency selection and package.json modification
 const REQUIRED_DEPS = ["react", "react-dom", "react-router", "prop-types"];
 const pkgPath = path.join(process.cwd(), `${dir}/package.json`);
 const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
@@ -92,10 +88,10 @@ newPkg.dependencies = Object.fromEntries(
 // Write new package.json
 fs.writeFileSync(pkgPath, JSON.stringify(newPkg, null, 2));
 
-// ### Install dependencies ###
+// Install dependencies
 await runCommands({ pm: selectedPM, mode: { i: true }, dir });
 
-// ### Cleanup ###
+// Cleanup
 // Remove unneeded files
 const unneededFiles = ["pnpm-lock.yaml", "pnpm-workspace.yaml"];
 
@@ -113,5 +109,5 @@ if (selectedPM !== "pnpm") {
   }
 }
 
-// ### Completion message ###
+// Completion message
 console.log(chalk.green("✅ Installation complete!"));

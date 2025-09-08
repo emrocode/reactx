@@ -15,7 +15,7 @@
     "@heroicons/react": "^2.2.0",
     "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
-    "darkify-js": "^1.1.5",
+    "darkify-js": "^1.1.11",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "prop-types": "^15.8.1",

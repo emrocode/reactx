@@ -1,13 +1,12 @@
 import { Outlet } from "react-router";
+import Placeholder from "./Placeholder";
 
-const Layout = () => {
+export default function Layout() {
   return (
     <>
-      <div className="grid size-full min-h-16 place-items-center border-b border-white/15 text-xs text-white italic after:content-['Header_section']" />
+      <Placeholder position="top" title="Header" />
       <Outlet />
-      <div className="grid size-full min-h-16 place-items-center border-t border-white/15 text-xs text-white italic after:content-['Footer_section']" />
+      <Placeholder position="bottom" title="Footer" />
     </>
   );
-};
-
-export default Layout;
+}

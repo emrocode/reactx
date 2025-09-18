@@ -44,8 +44,27 @@ if (foundPMs.length >= 1) {
 
 console.log(chalk.yellow(`Using "${selectedPM}" as package manager.`));
 
-// Project setup and cloning
+// Project setup, template and cloning
 const argv = minimist(process.argv.slice(2), {});
+
+let template = argv.template;
+
+if (!template) {
+  const answers = await inquirer.prompt([
+    {
+      type: "list",
+      name: "template",
+      message: "Select a template to use:",
+      choices: [
+        { name: "JavaScript", value: "js" },
+        { name: "TypeScript", value: "ts" },
+      ],
+      default: "js",
+    },
+  ]);
+  template = answers.template;
+}
+
 const dir = argv.dir || (await question("Project name? ")) || "reactx";
 const targetPath = path.resolve(process.cwd(), dir);
 
@@ -54,7 +73,7 @@ if (fs.existsSync(targetPath)) {
   process.exit(1);
 }
 
-await runCommands({ pm: selectedPM, mode: { i: false }, dir });
+await runCommands({ pm: selectedPM, mode: { i: false }, dir, template });
 
 // Dependency selection and package.json modification
 const REQUIRED_DEPS = ["react", "react-dom", "react-router", "prop-types"];

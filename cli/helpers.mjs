@@ -19,11 +19,11 @@ export async function hasCmd(cmd) {
 
 // Run available commands
 // Install mode: { i: true }
-export async function runCommands({ pm, mode, dir }) {
+export async function runCommands({ pm, mode, dir, template }) {
   const title = mode.i
     ? "Installing dependencies"
     : `🚀 Cloning @reactx template into "${dir}"`;
-  const templatePath = "emrocode/reactx/templates/js";
+  const templatePath = `emrocode/reactx/templates/${template}`;
 
   const commands = {
     npm: ["exec", "degit", templatePath, `./${dir}`],
